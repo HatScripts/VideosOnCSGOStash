@@ -7,6 +7,8 @@
 // @icon        http://csgostash.com/favicon.ico
 // @include     http://csgostash.com/*
 // @require     http://code.jquery.com/jquery-2.1.4.min.js
+// @downloadURL https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js
+// @updateURL   https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js
 // @grant       GM_addStyle
 // @noframes
 // ==/UserScript==
