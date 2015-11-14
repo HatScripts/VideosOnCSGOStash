@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         Videos on CS:GO Stash
-// @namespace    http://hatscripts.com/
-// @version      1.0
-// @description  Adds videos from CS:GO Skin Showcase (youtube.com/ffffinal) to CS:GO Stash (csgostash.com)
-// @author       HatScripts
-// @include      http://csgostash.com/*
-// @require      http://code.jquery.com/jquery-2.1.4.min.js
-// @grant        GM_addStyle
+// @name        Videos on CS:GO Stash
+// @namespace   https://github.com/HatScripts/VideosOnCSGOStash
+// @version     1.0
+// @description Adds videos from CS:GO Skin Showcase (youtube.com/ffffinal) to CS:GO Stash (csgostash.com)
+// @author      HatScripts
+// @include     http://csgostash.com/*
+// @require     http://code.jquery.com/jquery-2.1.4.min.js
+// @grant       GM_addStyle
 // @noframes
 // ==/UserScript==
 
