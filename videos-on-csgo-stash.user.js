@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Videos on CS:GO Stash
 // @namespace   https://github.com/HatScripts/VideosOnCSGOStash
-// @version     1.0
+// @version     1.0.1
 // @description Adds videos from CS:GO Skin Showcase (youtube.com/ffffinal) to CS:GO Stash (csgostash.com)
 // @author      HatScripts
 // @icon        http://csgostash.com/favicon.ico
@@ -61,7 +61,7 @@ $(function () {
     $.embedVideoIn = function (element, videoId) {
         element.append(
             $("<iframe>", {
-                src:             "https://www.youtube.com/embed/" + videoId,
+                src:             "https://www.youtube.com/embed/" + videoId + "?autoplay=1",
                 width:           328,
                 height:          185,
                 frameborder:     0,
