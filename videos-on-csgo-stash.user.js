@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name        Videos on CS:GO Stash
 // @namespace   https://github.com/HatScripts/VideosOnCSGOStash
-// @version     1.0.1
+// @version     1.0.2
 // @description Adds videos from CS:GO Skin Showcase (youtube.com/ffffinal) to CS:GO Stash (csgostash.com)
 // @author      HatScripts
 // @icon        http://csgostash.com/favicon.ico
 // @include     http://csgostash.com/*
-// @require     http://code.jquery.com/jquery-2.1.4.min.js
 // @downloadURL https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js
 // @updateURL   https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js
 // @noframes
@@ -29,49 +28,80 @@ $(function () {
         resultBoxes.each(function () {
             var resultBox = $(this);
             var skinName = resultBox.find("h3:first").text();
-            var target = weapon + " | " + skinName;
+            if (skinName === "★") {
+                skinName = "Vanilla";
+            }
+            var regex = new RegExp("^(\[Prototype\])?\\W*(?:StatTrak™ )?" + weapon
+                + "\\W*" + skinName + "\\W*(.+?)?\\W*Skin Showcase$", "i");
+            var videos = [];
+
             searchResults.items.forEach(function (video) {
-                if (video.snippet.title.substr(0, target.length) === target) {
-                    $.addVideoLink(resultBox, video.id.videoId);
+                var groups = regex.exec(video.snippet.title);
+                if (groups) {
+                    groups.shift();
+                    videos.push({
+                        id:      video.id.videoId,
+                        details: groups.filter(function (g) {
+                            return g;
+                        }).join(", ")
+                    });
                 }
+            });
+            videos.sort(function (a, b) {
+                return a.details.localeCompare(b.details);
+            }).forEach(function (video) {
+                $.addVideoLink(resultBox, video.id, video.details);
             });
         });
     };
 
-    $.addVideoLink = function (resultBox, videoId) {
+    $.addVideoLink = function (resultBox, videoId, details) {
+        var a = $("<a>", {
+            href:   "https://www.youtube.com/watch?v=" + videoId,
+            target: "_blank"
+        }).click(function (e) {
+            var a = $(this);
+            a.css("display", "none");
+            $.embedVideoIn(a.parent(), videoId);
+            e.preventDefault();
+        }).append(
+            $("<span>").addClass("glyphicon glyphicon-film")
+        ).append("Load Skin Showcase Video");
+
+        if (details) {
+            details = details.replace(/ \(|\) /, " - ");
+            a.append(" (" + details + ")");
+        }
         resultBox.find(".skinLink").append(
-            $("<p>").append(
-                $("<a>", {
-                    href:   "https://www.youtube.com/watch?v=" + videoId,
-                    target: "_blank"
-                }).click(function (e) {
-                    var a = $(this);
-                    a.css("display", "none");
-                    $.embedVideoIn(a.parent(), videoId);
-                    e.preventDefault();
-                }).append(
-                    $("<span>")
-                        .addClass("glyphicon")
-                        .addClass("glyphicon-film")
-                ).append("Load Skin Showcase Video")
-            )
+            $("<p>").append(a)
         );
     };
 
     $.embedVideoIn = function (element, videoId) {
         element.append(
-            $("<iframe>", {
-                src:             "https://www.youtube.com/embed/" + videoId + "?autoplay=1",
-                width:           328,
-                height:          185,
-                frameborder:     0,
-                allowfullscreen: ""
-            })
+            $("<div>").css({
+                position:         "relative",
+                "padding-bottom": "56.25%"
+            }).append(
+                $("<iframe>", {
+                    src:             "https://www.youtube.com/embed/" + videoId + "?autoplay=1",
+                    frameborder:     0,
+                    allowfullscreen: ""
+                }).css({
+                    position: "absolute",
+                    top:      0,
+                    left:     0,
+                    width:    "100%",
+                    height:   "100%"
+                })
+            )
         );
     };
 
     var heading = $("h1:first").text();
-    var weapon = heading.substr(0, heading.indexOf(" Skins"));
-    var resultBoxes = $(".resultBox");
-    $.searchVideos(weapon, resultBoxes.length + 5).success($.addVideoLinks);
+    if (heading) {
+        var weapon = heading.substr(0, heading.indexOf(" Skins"));
+        var resultBoxes = $(".resultBox");
+        $.searchVideos(weapon, resultBoxes.length + 10).success($.addVideoLinks);
+    }
 });
