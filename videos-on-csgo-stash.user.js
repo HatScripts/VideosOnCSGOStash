@@ -5,7 +5,7 @@
 // @description Adds videos from CS:GO Skin Showcase (youtube.com/ffffinal) to CS:GO Stash (csgostash.com)
 // @author      HatScripts
 // @icon        http://csgostash.com/favicon.ico
-// @include     http://csgostash.com/*
+// @include     http*://csgostash.com/*
 // @downloadURL https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js
 // @updateURL   https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js
 // @noframes
@@ -72,7 +72,7 @@ $(function () {
             details = details.replace(/ \(|\) /, " - ");
             a.append(" (" + details + ")");
         }
-        resultBox.find(".skinLink").append(
+        resultBox.find(".details-link").append(
             $("<p>").append(a)
         );
     };
@@ -84,7 +84,12 @@ $(function () {
                 "padding-bottom": "56.25%"
             }).append(
                 $("<iframe>", {
-                    src:             "https://www.youtube.com/embed/" + videoId + "?autoplay=1",
+                    src:             "https://www.youtube.com/embed/" + videoId
+                                     + "?autoplay=1"       // Plays automatically
+                                     + "&loop=1"           // Loops the video
+                                     + "&showinfo=0"       // Hides video title
+                                     + "&iv_load_policy=3" // Hides annotations
+                                     + "&rel=0",           // Hides relevant videos
                     frameborder:     0,
                     allowfullscreen: ""
                 }).css({
@@ -101,7 +106,7 @@ $(function () {
     var heading = $("h1:first").text();
     if (heading) {
         var weapon = heading.substr(0, heading.indexOf(" Skins"));
-        var resultBoxes = $(".resultBox");
+        var resultBoxes = $(".result-box");
         $.searchVideos(weapon, resultBoxes.length + 10).success($.addVideoLinks);
     }
 });
