@@ -1,4 +1,5 @@
 # Videos on CS:GO Stash [![GitHub release](https://img.shields.io/github/release/HatScripts/VideosOnCSGOStash.svg?style=flat-square)](https://github.com/HatScripts/VideosOnCSGOStash/releases/latest) [![GitHub issues](https://img.shields.io/github/issues/HatScripts/VideosOnCSGOStash.svg?style=flat-square)](https://github.com/HatScripts/VideosOnCSGOStash/issues)
+
 Userscript that adds videos from [CS:GO Skin Showcase](https://www.youtube.com/user/ffffinal) YouTube channel to [CS:GO Stash](csgostash.com) website.
 
 [![Preview image](http://i.imgur.com/3BX5QcI.gif)](http://i.imgur.com/3BX5QcI.gifv)
@@ -26,7 +27,7 @@ Nothing currently. Feel free to request a feature.
 
 ### The MIT License (MIT)
 
-Copyright © 2015 HatScripts
+Copyright © 2016 HatScripts
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
