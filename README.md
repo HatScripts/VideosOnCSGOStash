@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Videos on CS:GO Stash [![GitHub release](https://img.shields.io/github/release/HatScripts/VideosOnCSGOStash.svg)](https://github.com/HatScripts/VideosOnCSGOStash/releases/latest) [![GitHub issues](https://img.shields.io/github/issues/HatScripts/VideosOnCSGOStash.svg)](https://github.com/HatScripts/VideosOnCSGOStash/issues) [![License](https://img.shields.io/github/license/HatScripts/VideosOnCSGOStash.svg?maxAge=2592000)](https://github.com/HatScripts/VideosOnCSGOStash/blob/master/LICENSE.md)
+=======
+# Videos on CS:GO Stash [![GitHub release](https://img.shields.io/github/release/HatScripts/VideosOnCSGOStash.svg)](https://github.com/HatScripts/VideosOnCSGOStash/releases/latest) [![GitHub issues](https://img.shields.io/github/issues/HatScripts/VideosOnCSGOStash.svg)](https://github.com/HatScripts/VideosOnCSGOStash/issues) [![License](https://img.shields.io/github/license/HatScripts/VideosOnCSGOStash.svg?maxAge=2592000)](https://github.com/HatScripts/VideosOnCSGOStash/LICENSE.md)
+>>>>>>> origin/master
 
 Userscript that adds videos from [CS:GO Skin Showcase](https://www.youtube.com/user/ffffinal) YouTube channel to [CS:GO Stash](csgostash.com) website.
 
