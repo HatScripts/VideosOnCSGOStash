@@ -27,10 +27,7 @@ $(function () {
     $.addVideoLinks = function (searchResults) {
         resultBoxes.each(function () {
             var resultBox = $(this);
-            var skinName = resultBox.find("h3:first").text();
-            if (skinName === "★") {
-                skinName = "Vanilla";
-            }
+            var skinName = resultBox.find("h3:first").text().replace(/\\W/, "");
             var regex = new RegExp("^(\[Prototype\])?\\W*(?:StatTrak™ )?" + weapon
                 + "\\W*" + skinName + "\\W*(.+?)?\\W*Skin Showcase$", "i");
             var videos = [];
