@@ -7,12 +7,13 @@ Userscript that adds videos from [CS:GO Skin Showcase](https://www.youtube.com/u
 ### Download
 This is a userscript. To use it you'll first need one of the following browser extensions/add-ons:
 
-Browser | Recommended extension/add-on
---------|-----------------------------
-![Icon](https://github.com/alrra/browser-logos/raw/master/chrome/chrome_16x16.png) Chrome  | [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-![Icon](https://github.com/alrra/browser-logos/raw/master/firefox/firefox_16x16.png) Firefox | [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/)
-![Icon](https://github.com/alrra/browser-logos/raw/master/opera/opera_16x16.png) Opera   | [Violentmonkey](https://addons.opera.com/en/extensions/details/violent-monkey/)
-![Icon](https://github.com/alrra/browser-logos/raw/master/safari/safari_16x16.png) Safari | [Tampermonkey](https://safari.tampermonkey.net/tampermonkey.safariextz)
+|   | Tampermonkey | Greasemonkey | Violentmonkey |
+|---|--------------|--------------|---------------|
+![Chrome](https://cdn.rawgit.com/alrra/browser-logos/master/src/chrome/chrome_24x24.png "Chrome") | [Link](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) ([Beta](https://chrome.google.com/webstore/detail/tampermonkey-beta/gcalenpjmijncebpfijmoaglllgpjagf)) | - | [Link](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
+![Firefox](https://cdn.rawgit.com/alrra/browser-logos/master/src/firefox/firefox_24x24.png "Firefox") | [Link](https://addons.mozilla.org/firefox/addon/tampermonkey/) | [Link](https://addons.mozilla.org/firefox/addon/greasemonkey/) | - |
+![Edge](https://cdn.rawgit.com/alrra/browser-logos/master/src/edge/edge_24x24.png "Edge") | [Link](https://www.microsoft.com/store/apps/9NBLGGH5162S) | - | - |
+![Safari](https://cdn.rawgit.com/alrra/browser-logos/master/src/safari/safari_24x24.png "Safari") | [Link](https://safari.tampermonkey.net/tampermonkey.safariextz) | - | - |
+![Opera](https://cdn.rawgit.com/alrra/browser-logos/master/src/opera/opera_24x24.png "Opera") | [Link](https://addons.opera.com/extensions/details/tampermonkey-beta/) | - | [Link](https://addons.opera.com/extensions/details/violent-monkey/)
 
 If you already have one of the above, install this script from one of the following links:
 * [GitHub](https://github.com/HatScripts/VideosOnCSGOStash/raw/master/videos-on-csgo-stash.user.js)
